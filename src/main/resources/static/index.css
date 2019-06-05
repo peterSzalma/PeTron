@@ -1,13 +1,24 @@
 .middle-space {
-    height: 1000px;
-    width: 1000px;
-    margin-left: 180px;
-    background-color: burlywood;
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    text-align: center;
 }
 body {
-    background-color: lightgrey;
+    background-color: lightsteelblue;
+}
+h1 {
+    text-align: center;
 }
 .login-registration {
+    display: inline;
     position: absolute;
     right: 0;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
 }

@@ -6,11 +6,11 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/index.css">
     <title>Main Page</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a th:text="${appName}" class="navbar-brand"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,18 +18,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Features</a>
             <a class="nav-item nav-link" href="#">Pricing</a>
-        </div>
-        <div class="login-registration">
             <a class="nav-item nav-link" id="registration" href="#">Registration</a>
-            <a class="nav-item nav-link" id="login" href="#">Log In</a>
+            <a class="nav-item nav-link" id="login" href="/landing">Log In</a>
         </div>
     </div>
 </nav>
-
-<div id="Inner">
+<div class="middle-space">
     <h1>Lorem Ipsum</h1>
     <h4>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h4>
     <h5>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</h5>
@@ -37,45 +34,24 @@
 
     <hr>
 
-    <div id="Content">
-        <div id="bannerL"><div id="div-gpt-ad-1474537762122-2">
-            <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1474537762122-2"); });</script>
-        </div></div>
-        <div id="bannerR"><div id="div-gpt-ad-1474537762122-3">
-            <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1474537762122-3"); });</script>
-        </div></div>
-        <div class="boxed"><!--
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt finibus egestas. Aenean hendrerit luctus urna, ut porta turpis molestie quis. Vivamus posuere velit eget risus efficitur posuere. Nulla tempus quam id augue elementum faucibus. Nam ante leo, pharetra vitae elementum a, semper non magna. Cras ultrices, risus sit amet accumsan feugiat, nibh ex tempus lacus, non fermentum orci eros non ipsum. Curabitur tempus aliquam leo, sed rutrum ante. Nullam quis lacus maximus augue rhoncus consequat. Suspendisse ante ligula, tristique et porttitor ut, sodales sit amet ex.
+    </p>
+    <p>
+        Proin ac pulvinar nisl. Curabitur dapibus ipsum vel nisl viverra tincidunt. Quisque tempus metus libero, tempus tempus lacus porttitor a. Maecenas tincidunt imperdiet porta. Pellentesque efficitur vulputate arcu id faucibus. Maecenas maximus ullamcorper massa, egestas tristique purus fringilla vitae. Etiam convallis euismod metus, ac pretium ipsum. Aenean luctus non magna at suscipit. Integer lacinia ligula ut felis vehicula, in euismod tortor efficitur. Duis imperdiet laoreet felis ac malesuada. Etiam a tellus ac leo scelerisque scelerisque.
+    </p>
+    <p>
+        Sed ut turpis id arcu mattis euismod a at diam. Pellentesque dignissim efficitur semper. Pellentesque vulputate ex lectus, id varius ipsum efficitur eget. Pellentesque luctus sapien velit, accumsan ultricies enim pellentesque in. Donec hendrerit, leo sagittis accumsan consectetur, augue sem rutrum lacus, sed vehicula felis velit ac erat. Maecenas elementum at nulla vel congue. Integer vel lacinia nisl, a molestie odio. Pellentesque sed viverra dui, id pellentesque sapien. Nulla facilisi. Ut ut metus placerat augue maximus consectetur a sit amet massa. Cras volutpat sem eget erat rutrum malesuada dapibus eu nunc. Vestibulum sagittis consequat ex, suscipit malesuada magna consectetur sed. Integer commodo augue eu massa sodales sodales. Nullam eget sapien vitae risus mattis malesuada quis nec metus.
+    </p>
+    <p>
+        Vestibulum accumsan eros odio, varius mattis leo dictum eget. Suspendisse eu auctor dolor. Cras vestibulum massa vitae sodales dapibus. Etiam molestie orci a orci eleifend, sit amet malesuada sem dapibus. In interdum enim non facilisis tempus. Cras ultrices ac urna ac cursus. Sed vel turpis eleifend, dictum ante et, interdum velit. Ut fermentum neque a nisl malesuada fringilla. Vestibulum metus ex, iaculis ut urna eu, luctus condimentum sapien. Etiam mi turpis, tincidunt ac neque a, mattis auctor erat. Praesent mollis tortor libero, a ultricies erat bibendum at. In vitae sagittis libero. Ut elementum in elit eget ornare. Duis vel mauris egestas neque ultricies molestie.
+    </p>
+    <p>
+        Sed facilisis libero vitae nibh accumsan, at condimentum tellus consequat. Donec gravida augue lectus, eu vehicula diam consequat in. Morbi ante leo, porttitor hendrerit dolor sit amet, ullamcorper porttitor eros. Nulla gravida viverra ornare. Pellentesque porttitor ut tellus ut porttitor. Aenean eleifend odio vitae finibus vulputate. Sed id hendrerit arcu. Maecenas iaculis leo eu venenatis finibus. Nam auctor ultrices dui ut lobortis. Fusce pellentesque risus sed ornare consectetur.
+    </p>
 
-
-If you want to use Lorem Ipsum within another program please contact us for details
-on our API rather than parse the HTML below, we have XML and JSON available.
-
-
- --><div id="lipsum">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt finibus egestas. Aenean hendrerit luctus urna, ut porta turpis molestie quis. Vivamus posuere velit eget risus efficitur posuere. Nulla tempus quam id augue elementum faucibus. Nam ante leo, pharetra vitae elementum a, semper non magna. Cras ultrices, risus sit amet accumsan feugiat, nibh ex tempus lacus, non fermentum orci eros non ipsum. Curabitur tempus aliquam leo, sed rutrum ante. Nullam quis lacus maximus augue rhoncus consequat. Suspendisse ante ligula, tristique et porttitor ut, sodales sit amet ex.
-            </p>
-            <p>
-                Proin ac pulvinar nisl. Curabitur dapibus ipsum vel nisl viverra tincidunt. Quisque tempus metus libero, tempus tempus lacus porttitor a. Maecenas tincidunt imperdiet porta. Pellentesque efficitur vulputate arcu id faucibus. Maecenas maximus ullamcorper massa, egestas tristique purus fringilla vitae. Etiam convallis euismod metus, ac pretium ipsum. Aenean luctus non magna at suscipit. Integer lacinia ligula ut felis vehicula, in euismod tortor efficitur. Duis imperdiet laoreet felis ac malesuada. Etiam a tellus ac leo scelerisque scelerisque.
-            </p>
-            <p>
-                Sed ut turpis id arcu mattis euismod a at diam. Pellentesque dignissim efficitur semper. Pellentesque vulputate ex lectus, id varius ipsum efficitur eget. Pellentesque luctus sapien velit, accumsan ultricies enim pellentesque in. Donec hendrerit, leo sagittis accumsan consectetur, augue sem rutrum lacus, sed vehicula felis velit ac erat. Maecenas elementum at nulla vel congue. Integer vel lacinia nisl, a molestie odio. Pellentesque sed viverra dui, id pellentesque sapien. Nulla facilisi. Ut ut metus placerat augue maximus consectetur a sit amet massa. Cras volutpat sem eget erat rutrum malesuada dapibus eu nunc. Vestibulum sagittis consequat ex, suscipit malesuada magna consectetur sed. Integer commodo augue eu massa sodales sodales. Nullam eget sapien vitae risus mattis malesuada quis nec metus.
-            </p>
-            <p>
-                Vestibulum accumsan eros odio, varius mattis leo dictum eget. Suspendisse eu auctor dolor. Cras vestibulum massa vitae sodales dapibus. Etiam molestie orci a orci eleifend, sit amet malesuada sem dapibus. In interdum enim non facilisis tempus. Cras ultrices ac urna ac cursus. Sed vel turpis eleifend, dictum ante et, interdum velit. Ut fermentum neque a nisl malesuada fringilla. Vestibulum metus ex, iaculis ut urna eu, luctus condimentum sapien. Etiam mi turpis, tincidunt ac neque a, mattis auctor erat. Praesent mollis tortor libero, a ultricies erat bibendum at. In vitae sagittis libero. Ut elementum in elit eget ornare. Duis vel mauris egestas neque ultricies molestie.
-            </p>
-            <p>
-                Sed facilisis libero vitae nibh accumsan, at condimentum tellus consequat. Donec gravida augue lectus, eu vehicula diam consequat in. Morbi ante leo, porttitor hendrerit dolor sit amet, ullamcorper porttitor eros. Nulla gravida viverra ornare. Pellentesque porttitor ut tellus ut porttitor. Aenean eleifend odio vitae finibus vulputate. Sed id hendrerit arcu. Maecenas iaculis leo eu venenatis finibus. Nam auctor ultrices dui ut lobortis. Fusce pellentesque risus sed ornare consectetur.
-            </p></div>
-            <div id="generated">Generated 5 paragraphs, 451 words, 3103 bytes of <a href="https://www.lipsum.com/" title="Lorem Ipsum">Lorem Ipsum</a></div>
-        </div>
-    </div>
 
     <hr>
-
-    <div class="boxed"><a style="text-decoration:none" href="mailto:help@lipsum.com">help@lipsum.com</a><br><a style="text-decoration:none" target="_blank" href="/privacy.pdf">Privacy Policy</a></div>
-
-
 
 </div>
 </body>
