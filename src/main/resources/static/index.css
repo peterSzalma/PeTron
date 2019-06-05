@@ -1,0 +1,13 @@
+.middle-space {
+    height: 1000px;
+    width: 1000px;
+    margin-left: 180px;
+    background-color: burlywood;
+}
+body {
+    background-color: lightgrey;
+}
+.login-registration {
+    position: absolute;
+    right: 0;
+}
