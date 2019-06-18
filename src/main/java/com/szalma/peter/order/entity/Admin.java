@@ -1,6 +1,5 @@
 package com.szalma.peter.order.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,18 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Entity
-public class Customer {
+public class Admin {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String companyName;
+    private String name;
     private String email;
-    private String phoneNumber;
-    private String password;
 }
