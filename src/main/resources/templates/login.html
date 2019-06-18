@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -13,14 +13,14 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Log In</h5>
-                    <form class="form-signin">
+                    <form class="form-signin" th:action="@{/login}" th:object="${customer}" method="post">
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                            <input type="email" id="inputEmail" class="form-control" th:field="*{email}" placeholder="Email address" required autofocus>
                             <label for="inputEmail">Email address</label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <input type="password" id="inputPassword" class="form-control" th:field="*{password}" placeholder="Password" required>
                             <label for="inputPassword">Password</label>
                         </div>
 

@@ -18,4 +18,22 @@ public class OrderApplication {
         SpringApplication.run(OrderApplication.class, args);
     }
 
+    @Bean
+    CommandLineRunner runner(){
+        return args -> {
+            Customer admin = Customer.builder()
+                    .email("admin@mail.com")
+                    .phoneNumber("205657423")
+                    .password("admin")
+                    .admin(true)
+                    .build();
+
+            customerRepository.save(admin);
+
+
+        };
+    }
+
+
+
 }

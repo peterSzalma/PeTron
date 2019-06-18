@@ -25,4 +25,5 @@ public class Customer {
     private String email;
     private String phoneNumber;
     private String password;
+    private Boolean admin = false;
 }

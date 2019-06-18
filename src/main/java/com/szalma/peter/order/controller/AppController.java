@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class AppController {
 
@@ -22,10 +25,14 @@ public class AppController {
         return "login";
     }
 
-    /*@GetMapping("/registration")
-    public String registrationPage() {
-        return "registration";
-    }*/
+    @PostMapping("/login")
+    public String loginSubmit(@ModelAttribute Customer customer) {
+        Customer registeredCustomer = customerRepository.findByEmail(customer.getEmail());
+        if (registeredCustomer != null) {
+            return "redirect:admin-page";
+        }
+        return "login";
+    }
 
     @GetMapping("/admin-page")
     public String adminPage() {
@@ -34,18 +41,6 @@ public class AppController {
 
     @Autowired
     CustomerRepository customerRepository;
-
-    /*@PostMapping("/registration")
-    public String registration(@ModelAttribute("customer") Customer customer, Model model) {
-        model.addAttribute("customer", customer);
-        customerRepository.save(Customer.builder()
-                .companyName(customer.getCompanyName())
-                .password(customer.getPassword())
-                .email(customer.getEmail())
-                .phoneNumber(customer.getPhoneNumber())
-                .build());
-        return "redirect:login";
-    }*/
 
     @GetMapping("/registration")
     public String registrationForm(Model model) {
@@ -60,6 +55,7 @@ public class AppController {
                 .password(customer.getPassword())
                 .email(customer.getEmail())
                 .phoneNumber(customer.getPhoneNumber())
+                .admin(customer.getAdmin())
                 .build());
         return "login";
     }
