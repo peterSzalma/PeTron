@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
@@ -16,26 +16,26 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-center">Register</h5>
-                    <form class="form-signin">
+                    <form class="form-signin" th:action="@{/registration}" th:object="${customer}" method="post">
                         <div class="form-label-group">
-                            <input type="text" id="inputUserame" class="form-control" placeholder="Company Name" required autofocus>
-                            <label for="inputUserame">Company Name</label>
+                            <input type="text" id="companyName" th:field="*{companyName}" class="form-control" placeholder="Company Name" required autofocus>
+                            <label for="companyName">Company Name</label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="text" id="inputPhone" class="form-control" placeholder="Phone number" required autofocus>
-                            <label for="inputUserame">Phone Number</label>
+                            <input type="text" id="inputPhone" th:field="*{phoneNumber}" class="form-control" placeholder="Phone number" required autofocus>
+                            <label for="inputPhone">Phone Number</label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                            <input type="email" id="inputEmail" th:field="*{email}" class="form-control" placeholder="Email address" required>
                             <label for="inputEmail">Email address</label>
                         </div>
 
                         <hr>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <input type="password" id="inputPassword" th:field="*{password}" class="form-control" placeholder="Password" required>
                             <label for="inputPassword">Password</label>
                         </div>
 
