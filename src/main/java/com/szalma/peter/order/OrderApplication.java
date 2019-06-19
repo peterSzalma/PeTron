@@ -1,18 +1,17 @@
 package com.szalma.peter.order;
 
-import com.szalma.peter.order.entity.Customer;
-import com.szalma.peter.order.repository.CustomerRepository;
+import com.szalma.peter.order.entity.Admin;
+import com.szalma.peter.order.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class OrderApplication {
     @Autowired
-    CustomerRepository customerRepository;
+    AdminRepository adminRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(OrderApplication.class, args);
@@ -21,14 +20,13 @@ public class OrderApplication {
     @Bean
     CommandLineRunner runner(){
         return args -> {
-            Customer admin = Customer.builder()
+            Admin admin = Admin.builder()
+                    .name("Péter")
                     .email("admin@mail.com")
-                    .phoneNumber("205657423")
                     .password("admin")
-                    .admin(true)
                     .build();
 
-            customerRepository.save(admin);
+            adminRepository.save(admin);
 
 
         };

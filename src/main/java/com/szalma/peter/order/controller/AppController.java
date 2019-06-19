@@ -1,6 +1,8 @@
 package com.szalma.peter.order.controller;
 
+import com.szalma.peter.order.entity.Admin;
 import com.szalma.peter.order.entity.Customer;
+import com.szalma.peter.order.repository.AdminRepository;
 import com.szalma.peter.order.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,11 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class AppController {
+    @Autowired
+    AdminRepository adminRepository;
 
     @GetMapping("/")
     public String landingPage() {
@@ -27,16 +28,15 @@ public class AppController {
 
     @PostMapping("/login")
     public String loginSubmit(@ModelAttribute Customer customer) {
-        Customer registeredCustomer = customerRepository.findByEmail(customer.getEmail());
-        if (registeredCustomer != null) {
+        Customer registeredCustomerPW = customerRepository.findByPassword(customer.getPassword());
+        Customer registeredCustomerEmail = customerRepository.findByEmail(customer.getEmail());
+        Admin registeredAdmin = adminRepository.findByEmail(customer.getEmail());
+        if (registeredCustomerPW != null && registeredCustomerEmail != null) {
+            return "redirect:/";
+        } else if (registeredAdmin != null) {
             return "redirect:admin-page";
         }
         return "login";
-    }
-
-    @GetMapping("/admin-page")
-    public String adminPage() {
-        return "admin_index";
     }
 
     @Autowired
