@@ -26,6 +26,11 @@ public class AppController {
         return "login";
     }
 
+    @GetMapping("/customer-page")
+    public String customerPage() {
+        return "customer_page";
+    }
+
     @PostMapping("/login")
     public String loginSubmit(@ModelAttribute Customer customer) {
         Customer registeredCustomerPW = customerRepository.findByPassword(customer.getPassword());
