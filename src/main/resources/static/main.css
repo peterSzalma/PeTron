@@ -56,7 +56,27 @@ ul, li {
 input {
   display: block;
 	outline: none;
-	border: none !important;
+	border:1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.modal-input {
+  margin-bottom: 15px;
+  height: calc(2.25rem + 2px);
+  padding-left: 4px;
+  margin-left: 32%;
+  width: 34%;
+}
+.modal-input-color {
+  margin-bottom: 15px;
+  height: calc(2.25rem + 2px);
+  margin-left: 32%;
+  width: 34%;
+}
+
+.custom-select {
+  width: 30%;
 }
 
 textarea {
@@ -302,4 +322,9 @@ tbody tr:hover {
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+td input{
+  display: inline-block;
+  margin-left: 10px;
 }

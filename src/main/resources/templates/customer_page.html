@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Customer Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/main.css">
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <!-- Custom styles for this template -->
     <link href="/scrolling-nav.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -24,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger">Add new Order</a>
+                    <a class="nav-link js-scroll-trigger" data-toggle="modal" href="#exampleModal" style="cursor: pointer">Add new Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger">Profile</a>
+                    <a class="nav-link js-scroll-trigger" style="cursor: pointer">Profile</a>
                 </li>
             </ul>
         </div>
@@ -42,7 +45,8 @@
                     <tr class="table100-head">
                         <th class="column1">Date</th>
                         <th class="column2">Order ID</th>
-                        <th class="column3">Name</th>
+                        <th class="column2">Product Type</th>
+                        <th class="column3">Color</th>
                         <th class="column4">Price</th>
                         <th class="column5">Quantity</th>
                         <th class="column6">Total</th>
@@ -52,71 +56,44 @@
                     <tr>
                         <td class="column1">2017-09-29 01:22</td>
                         <td class="column2">200398</td>
-                        <td class="column3">iPhone X 64Gb Grey</td>
+                        <td class="column2">T-SHIRT</td>
+                        <td class="column3"><input type="color" value="#ee0c0c"></td>
                         <td class="column4">$999.00</td>
                         <td class="column5">1</td>
                         <td class="column6">$999.00</td>
                     </tr>
                     <tr>
-                        <td class="column1">2017-09-28 05:57</td>
-                        <td class="column2">200397</td>
-                        <td class="column3">Samsung S8 Black</td>
-                        <td class="column4">$756.00</td>
-                        <td class="column5">1</td>
-                        <td class="column6">$756.00</td>
-                    </tr>
-                    <tr>
-                        <td class="column1">2017-09-26 05:57</td>
-                        <td class="column2">200396</td>
-                        <td class="column3">Game Console Controller</td>
-                        <td class="column4">$22.00</td>
-                        <td class="column5">2</td>
-                        <td class="column6">$44.00</td>
-                    </tr>
-                    <tr>
-                        <td class="column1">2017-09-19 05:57</td>
-                        <td class="column2">200387</td>
-                        <td class="column3">iPhone X 64Gb Grey</td>
+                        <td class="column1">2017-09-29 01:22</td>
+                        <td class="column2">200398</td>
+                        <td class="column2">T-SHIRT</td>
+                        <td class="column3"><input type="color" value="#33f206"></td>
                         <td class="column4">$999.00</td>
                         <td class="column5">1</td>
                         <td class="column6">$999.00</td>
                     </tr>
                     <tr>
-                        <td class="column1">2017-09-18 05:57</td>
-                        <td class="column2">200386</td>
-                        <td class="column3">iPhone X 64Gb Grey</td>
+                        <td class="column1">2017-09-29 01:22</td>
+                        <td class="column2">200398</td>
+                        <td class="column2">T-SHIRT</td>
+                        <td class="column3"><input type="color" value="#0be0f1"><input type="color" value="#33f206"></td>
                         <td class="column4">$999.00</td>
                         <td class="column5">1</td>
                         <td class="column6">$999.00</td>
                     </tr>
                     <tr>
-                        <td class="column1">2017-09-22 05:57</td>
-                        <td class="column2">200389</td>
-                        <td class="column3">Macbook Pro Retina 2017</td>
-                        <td class="column4">$2199.00</td>
-                        <td class="column5">1</td>
-                        <td class="column6">$2199.00</td>
-                    </tr>
-                    <tr>
-                        <td class="column1">2017-09-21 05:57</td>
-                        <td class="column2">200388</td>
-                        <td class="column3">Game Console Controller</td>
+                        <td class="column1">2017-09-29 01:22</td>
+                        <td class="column2">200398</td>
+                        <td class="column2">T-SHIRT</td>
+                        <td class="column3"><input type="color" value="#eff505"></td>
                         <td class="column4">$999.00</td>
                         <td class="column5">1</td>
                         <td class="column6">$999.00</td>
                     </tr>
                     <tr>
-                        <td class="column1">2017-09-19 05:57</td>
-                        <td class="column2">200387</td>
-                        <td class="column3">iPhone X 64Gb Grey</td>
-                        <td class="column4">$999.00</td>
-                        <td class="column5">1</td>
-                        <td class="column6">$999.00</td>
-                    </tr>
-                    <tr>
-                        <td class="column1">2017-09-18 05:57</td>
-                        <td class="column2">200386</td>
-                        <td class="column3">iPhone X 64Gb Grey</td>
+                        <td class="column1">2017-09-29 01:22</td>
+                        <td class="column2">200398</td>
+                        <td class="column2">T-SHIRT</td>
+                        <td class="column3"><input type="color" value="#f006d2"><input type="color" value="#eff505"> <input type="color" value="#33f206"></td>
                         <td class="column4">$999.00</td>
                         <td class="column5">1</td>
                         <td class="column6">$999.00</td>
@@ -128,5 +105,58 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input class="modal-input" type="number" id="quantity" placeholder="Quantity">
+                    <input class="modal-input" type="date" id="date">
+                    <input class="modal-input-color" type="color" id="color" placeholder="Color">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Order Type</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option th:value="${T(com.szalma.peter.order.entity.Type).TSHIRT}"
+                                    th:text="${T(com.szalma.peter.order.entity.Type).TSHIRT}"></option>
+                            <option th:value="${T(com.szalma.peter.order.entity.Type).POLOSHIRT}"
+                                    th:text="${T(com.szalma.peter.order.entity.Type).POLOSHIRT}" ></option>
+                            <option th:value="${T(com.szalma.peter.order.entity.Type).CANVASBAG}"
+                                    th:text="${T(com.szalma.peter.order.entity.Type).CANVASBAG}" ></option>
+                            <option th:value="${T(com.szalma.peter.order.entity.Type).SWEATPANTS}"
+                                    th:text="${T(com.szalma.peter.order.entity.Type).SWEATPANTS}" ></option>
+                            <option th:value="${T(com.szalma.peter.order.entity.Type).SWEATER}"
+                                    th:text="${T(com.szalma.peter.order.entity.Type).SWEATER}" ></option>
+                            <option th:value="${T(com.szalma.peter.order.entity.Type).OTHER}"
+                                    th:text="${T(com.szalma.peter.order.entity.Type).OTHER}" ></option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#myLink").click(function(){
+                $("#myModal").modal();
+            });
+        });
+    </script>
+</div>
 </body>
 </html>
