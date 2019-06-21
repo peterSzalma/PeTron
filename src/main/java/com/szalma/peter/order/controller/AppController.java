@@ -37,7 +37,7 @@ public class AppController {
         Customer registeredCustomerEmail = customerRepository.findByEmail(customer.getEmail());
         Admin registeredAdmin = adminRepository.findByEmail(customer.getEmail());
         if (registeredCustomerPW != null && registeredCustomerEmail != null) {
-            return "redirect:/";
+            return "redirect:customer-page";
         } else if (registeredAdmin != null) {
             return "redirect:admin-page";
         }
