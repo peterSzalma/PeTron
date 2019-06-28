@@ -26,6 +26,11 @@ public class AppController {
         return "login";
     }
 
+    @GetMapping("/admin-page")
+    public String adminPage() {
+        return "admin_index";
+    }
+
     @GetMapping("/customer-page")
     public String customerPage() {
         return "customer_page";
@@ -38,8 +43,6 @@ public class AppController {
         Admin registeredAdmin = adminRepository.findByEmail(customer.getEmail());
         if (registeredCustomerPW != null && registeredCustomerEmail != null) {
             return "redirect:customer-page";
-        } else if (registeredAdmin != null) {
-            return "redirect:admin-page";
         }
         return "login";
     }
