@@ -10,11 +10,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class AppController {
     @Autowired
     AdminRepository adminRepository;
+
+    @Autowired
+    CustomerRepository customerRepository;
+
+    @ModelAttribute("customer")
+    public Customer populateCustomer() {
+        return new Customer();
+    }
 
     @GetMapping("/")
     public String landingPage() {
@@ -32,39 +43,32 @@ public class AppController {
     }
 
     @GetMapping("/customer-page")
-    public String customerPage() {
-        return "customer_page";
+    public String customerPage(@SessionAttribute("loggedInCustomerSession") Customer loggedInCustomer) {
+        if (loggedInCustomer != null)
+            return "customer_page";
+        return "redirect:login";
     }
 
     @PostMapping("/login")
-    public String loginSubmit(@ModelAttribute Customer customer) {
-        Customer registeredCustomerPW = customerRepository.findByPassword(customer.getPassword());
+    public String loginSubmit(@ModelAttribute Customer customer, Model model, HttpSession session) {
         Customer registeredCustomerEmail = customerRepository.findByEmail(customer.getEmail());
         Admin registeredAdmin = adminRepository.findByEmail(customer.getEmail());
-        if (registeredCustomerPW != null && registeredCustomerEmail != null) {
+        if (registeredCustomerEmail.getPassword().equals(customer.getPassword())) {
+            model.addAttribute("loggedInCustomer", customer);
+            session.setAttribute("loggedInCustomerSession", customer);
             return "redirect:customer-page";
         }
         return "login";
     }
 
-    @Autowired
-    CustomerRepository customerRepository;
-
     @GetMapping("/registration")
-    public String registrationForm(Model model) {
-        model.addAttribute("customer", new Customer());
+    public String registrationForm() {
         return "registration";
     }
 
     @PostMapping("/registration")
     public String registrationSubmit(@ModelAttribute Customer customer) {
-        customerRepository.save(Customer.builder()
-                .companyName(customer.getCompanyName())
-                .password(customer.getPassword())
-                .email(customer.getEmail())
-                .phoneNumber(customer.getPhoneNumber())
-                .admin(customer.getAdmin())
-                .build());
-        return "login";
+        customerRepository.save(customer);
+        return "redirect:login";
     }
 }
